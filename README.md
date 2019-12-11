@@ -1,5 +1,7 @@
 # devsecops-coding-test
 
+## Assignment
+
 In this exercise you can use any language of your choice, except shell script. The goal is to implement a function that combines 2 sorted arrays into a single sorted array. The function should be invoked from command line with the 2 sorted arrays as the arguments.
 Here are sample inputs and outputs:
 
@@ -22,3 +24,13 @@ $ docker run <image>:<tag> [1, 2, 7, 9] [3, 6, 8]
 ```
 
 Create a public github repo for this exercise and include all files required to build and run the containerized function. Use a README for build and run steps if necessary. Please submit the github repo within a week of receiving the exercise.
+
+## Usage
+- ### Command Line:
+  ```./main.py "[1,2,3]" "[4,5,6]"```
+
+- ### Docker:
+  ```docker run devsecops-coding-test:latest "[1,2,3]" "[4,5,6]"```
+
+## Build Status
+![](https://github.com/actions/hello-world/workflows/.github/workflows/build.yml/badge.svg)
