@@ -19,4 +19,6 @@ jobs:
         args: pytest test.py
     - name: Build Docker Image
       run: docker build . --file Dockerfile --tag "$(basename "$(pwd)")":latest
+    - name: Run Docker Image
+      run: docker run "$(basename "$(pwd)")":latest "[1,2,3]" "[4,5,6]"
 
