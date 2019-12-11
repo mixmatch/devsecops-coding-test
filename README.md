@@ -25,12 +25,32 @@ $ docker run <image>:<tag> [1, 2, 7, 9] [3, 6, 8]
 
 Create a public github repo for this exercise and include all files required to build and run the containerized function. Use a README for build and run steps if necessary. Please submit the github repo within a week of receiving the exercise.
 
-## Usage
-- ### Command Line:
-  ```./main.py "[1,2,3]" "[4,5,6]"```
+## Development
+Requirements:
+- docker
+- python 3.8.0
 
-- ### Docker:
-  ```docker run devsecops-coding-test:latest "[1,2,3]" "[4,5,6]"```
+Testing:
+```
+pip install flake8 pytest
+flake8 . --count --show-source --statistics --max-line-length=120
+pytest test.py
+```
+Building Docker Image:
+```
+docker build . --file Dockerfile --tag devsecops-coding-test:latest
+```
+
+## Usage
+From Command Line:
+```
+./main.py "[1,2,3]" "[4,5,6]"
+```
+
+With Docker:
+```
+docker run devsecops-coding-test:latest "[1,2,3]" "[4,5,6]"
+```
 
 ## Build Status
 ![](https://github.com/mixmatch/devsecops-coding-test/workflows/Test%20Code%20and%20Build%20Docker%20Container/badge.svg)
