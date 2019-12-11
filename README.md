@@ -33,4 +33,4 @@ Create a public github repo for this exercise and include all files required to 
   ```docker run devsecops-coding-test:latest "[1,2,3]" "[4,5,6]"```
 
 ## Build Status
-![](https://github.com/actions/hello-world/workflows/.github/workflows/build.yml/badge.svg)
+![](https://github.com/mixmatch/devsecops-coding-test/workflows/Test%20Code%20and%20Build%20Docker%20Container/badge.svg)
