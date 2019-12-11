@@ -1,0 +1,22 @@
+name: Test Code and Build Docker Container
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Validate Python
+      uses: cclauss/GitHub-Action-for-Flake8@v0.5.0
+      with:
+        args: flake8 . --count --show-source --statistics
+    - name: Test Python
+      uses: cclauss/GitHub-Action-for-pytest@0.5.0
+      with:
+        args: pytest test.py
+    - name: Build Docker Image
+      run: docker build . --file Dockerfile --tag "$(basename "$(pwd)")":latest
+
